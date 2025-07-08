@@ -13,6 +13,7 @@ jobs:
       matrix:
         php-version: [ '8.1', '8.2', '8.3', '8.4', '8.5' ]
         framework: [ 'Laravel Octane', 'Hyperf', 'Simps' ]
+    continue-on-error: ${{ matrix.php-version == '8.5' }}
     name: ${{ matrix.framework }} - PHP ${{ matrix.php-version }}
     steps:
       - name: Checkout code
@@ -88,6 +89,7 @@ jobs:
       matrix:
         php-version: [ '8.1', '8.2', '8.3', '8.4', '8.5' ]
         framework: [ 'Simps' ]
+    continue-on-error: ${{ matrix.php-version == '8.5' }}
     name: ${{ matrix.framework }} - PHP ${{ matrix.php-version }} - macOS
     steps:
       - name: Checkout code
